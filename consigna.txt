@@ -1,0 +1,12 @@
+La modalidad de entrega y de trabajo es Grupal
+
+Objetivo:
+Realizar un programa que tome por entrada un archivo cualquiera y devuelva el mismo archivo cifrado con el algoritmo AES-256.
+Se podrá utilizar el lenguaje de programación preferido por el alumno.
+Deberá entregarse un breve informe explicando el funcionamiento del código.
+El informe deberá contener un anexo explicando cómo se deberá efectuar la ejecución.
+
+Presentación:
+Deberá entregarse un archivo .zip con
+El código fuente y el ejecutable.
+El informe en formato PDF.
