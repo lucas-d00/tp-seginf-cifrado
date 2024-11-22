@@ -8,8 +8,14 @@ KEY_SIZE = 32  # Tamaño de la clave (256 bits)
 BLOCK_SIZE = AES.block_size  # Tamaño del bloque AES (16 bytes)
 
 def generate_key():
-    #Genera una clave AES aleatoria.
-    return get_random_bytes(KEY_SIZE)
+    #Genera una clave AES aleatoria, la guarda en un archivo de texto.
+    generated_key = get_random_bytes(KEY_SIZE)
+
+    with open('key.txt','w') as keyFile:
+        keyFile.write(generated_key.hex())
+
+    return generated_key
+
 
 def encrypt_file(file_path, key):
     """Encripta un archivo usando AES en modo CBC. Devuelve el archivo encriptado"""
