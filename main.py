@@ -8,7 +8,7 @@ KEY_SIZE = 32  # Tamaño de la clave (256 bits)
 BLOCK_SIZE = AES.block_size  # Tamaño del bloque AES (16 bytes)
 
 def generate_key():
-    """Genera una clave AES aleatoria."""
+    #Genera una clave AES aleatoria.
     return get_random_bytes(KEY_SIZE)
 
 def encrypt_file(file_path, key):
@@ -17,7 +17,7 @@ def encrypt_file(file_path, key):
     with open(file_path, 'rb') as file:
         data = file.read()
 
-    # Crear vector de inicialización (IV) y cifrador
+    # Crear IV y cifrador
     iv = get_random_bytes(BLOCK_SIZE)
     cipher = AES.new(key, AES.MODE_CBC, iv)
 
@@ -62,14 +62,14 @@ def decrypt_file(encrypted_file_path, key):
     print(f"Archivo desencriptado guardado en: {decrypted_file_path}")
     return decrypted_file_path
 
-# --- Ejemplo de uso ---
+
 if __name__ == '__main__':
     # Generar clave
     key = generate_key()
     print(f"Clave generada: {key.hex()}")
 
     # Ruta del archivo a encriptar
-    file_to_encrypt = 'target.txt'  # Cambia esto por tu archivo real
+    file_to_encrypt = 'target.txt'
 
     # Encriptar y desencriptar
     encrypted_path = encrypt_file(file_to_encrypt, key)
